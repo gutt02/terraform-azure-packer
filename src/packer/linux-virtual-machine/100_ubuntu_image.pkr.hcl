@@ -11,7 +11,7 @@ source "azure-arm" "this" {
   os_type                           = var.linux_virtual_machine.os_type
   subscription_id                   = var.subscription_id
   tenant_id                         = var.tenant_id
-  vm_size                           = "Standard_B2s"
+  vm_size                           = var.linux_virtual_machine.vm_size
 
   shared_image_gallery_destination {
     subscription         = var.subscription_id

@@ -3,7 +3,6 @@ resource "azurecaf_name" "vm" {
   resource_type  = "azurerm_linux_virtual_machine"
   prefixes       = var.global_settings.azurecaf_name.prefixes
   resource_types = ["azurerm_public_ip", "azurerm_network_interface", "azurerm_managed_disk"]
-  suffixes       = ["kif"]
 }
 
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip
@@ -58,5 +57,5 @@ resource "azurerm_linux_virtual_machine" "this" {
   }
 
   size            = var.linux_virtual_machine.size
-  source_image_id = var.source_image_id
+  source_image_id = data.azurerm_shared_image_version.this.id
 }

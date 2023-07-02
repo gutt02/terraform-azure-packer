@@ -51,9 +51,9 @@ variable "location" {
   description = "Default Azure region, use Azure CLI notation."
 }
 
-variable "source_image_id" {
+variable "shared_image_id" {
   type        = string
-  description = "Id of the VM image."
+  description = "Id of the shared image."
 }
 
 variable "tags" {
@@ -66,11 +66,11 @@ variable "tags" {
   })
 
   default = {
-    created_by  = "nc-kif-iac-sp"
+    created_by  = "azc-iac-acf-sp-tf"
     contact     = "contact@me"
-    customer    = "Nordcloud"
-    environment = "Proof of Concept"
-    project     = "Klarity Image Factory"
+    customer    = "Azure"
+    environment = "Cloud Foundation"
+    project     = "Shared Image Gallery"
   }
 
   description = "Default tags for resources, only applied to resource groups."
